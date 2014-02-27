@@ -1717,7 +1717,7 @@
 22913 silly lockFile fa16a2ce-commander-0-6-1 commander@0.6.1
 22914 silly lockFile fa16a2ce-commander-0-6-1 commander@0.6.1
 22915 verbose readDependencies using package.json deps
-22916 silly gunzTarPerm extractEntry test/find-file.js
+22916 silly gunzTarPerm extractEntry test/find-Util.js
 22917 silly gunzTarPerm extractEntry test/get.js
 22918 verbose readDependencies using package.json deps
 22919 silly resolved []
@@ -2072,7 +2072,7 @@
 23093 silly lockFile cce16b18--npm-node-uuid-1-4-1-package-tgz tar:///Users/liuyixi/.npm/node-uuid/1.4.1/package.tgz
 23094 silly lockFile cce16b18--npm-node-uuid-1-4-1-package-tgz tar:///Users/liuyixi/.npm/node-uuid/1.4.1/package.tgz
 23095 info postinstall once@1.1.1
-23096 silly gunzTarPerm extractEntry test/ignore-unfound-file.js
+23096 silly gunzTarPerm extractEntry test/ignore-unfound-Util.js
 23097 silly gunzTarPerm extractEntry test/ini.js
 23098 silly gunzTarPerm extractEntry .npmignore
 23099 silly gunzTarPerm extractEntry LICENSE
