@@ -6,6 +6,14 @@ var g_Files = null;
 $(function(){
     document.getElementById('fileSelect').addEventListener('change',prepareFiles,false);
     $('#keywordsInputDone').on('click',readyToSearch);
+    $('#keywordsInput').on('keydown',function(e){
+        if(e.keyCode == 13){
+            readyToSearch();
+        }
+    });
+    $('#fileButton').on('click',function(){
+        $('#fileSelect').click();
+    });
 });
 
 
@@ -16,12 +24,13 @@ function prepareFiles(e){
             console.log(files);
             UI.sendMessage('ReadFileDone',files);
             g_Files = files;
+            UI.sendMessage('MakeInputEditable');
         })
 }
 
 
 function readyToSearch(){
-    var keywords = $('#keywordsInput').val();
+    var keywords = $.trim($('#keywordsInput').val());
     if(keywords.length > 0 ){
         Util.searchKeyWords(keywords,g_Files)
             .then(function(res){

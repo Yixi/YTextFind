@@ -306,9 +306,28 @@ module.exports = function (grunt) {
                         'images/{,*/}*.webp',
                         '{,*/}*.html',
                         'styles/fonts/{,*/}*.*',
+                        'bower_components/flat-ui-official/*',
                         'bower_components/' + (this.includeCompass ? 'sass-' : '') + 'bootstrap/' + (this.includeCompass ? 'fonts/' : 'dist/fonts/') +'*.*'
                     ]
-                }]
+                },{
+                    expand:true,
+                    cwd:'<%= yeoman.app %>',
+                    dest:'<%= yeoman.dist %>/fonts/',
+                    flatten:true,
+                    src:[
+                        'bower_components/flat-ui-official/fonts/*',
+                        'bower_components/sass-bootstrap/fonts/*.*'
+                    ]
+                },{
+                    expand:true,
+                    cwd:'<%= yeoman.app %>',
+                    dest:'<%= yeoman.dist %>/fonts/lato',
+                    flatten:true,
+                    src:[
+                        'bower_components/flat-ui-official/fonts/lato/*'
+                    ]
+                }
+                ]
             },
             styles: {
                 expand: true,

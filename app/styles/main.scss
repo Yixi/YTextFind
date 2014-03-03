@@ -1,5 +1,46 @@
 $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 
-@import 'sass-bootstrap/lib/bootstrap';
 
+.file{
+  margin-top: 50px;
+}
 
+.fileArea{
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+}
+
+.fileButton{
+    width: 100%;
+}
+
+#fileSelect{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+//  opacity: 0;
+    display: none;
+}
+
+.fileList{
+  margin-top: 20px;
+  .list{
+    height: 150px;
+    overflow-y:auto;
+  }
+
+    h6{
+      font-size:18px;
+
+      small{
+        color: #7f8c8d;
+        padding-left: 10px;
+      }
+    }
+}
+
+#result{
+
+}

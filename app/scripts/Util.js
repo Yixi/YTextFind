@@ -37,17 +37,26 @@ var Util = {
         return new YPro(function(comp,err,prog){
             var len = files.length;
             var result = [];
+            keywords = keywords.split(' ');
+            console.log(keywords);
             for(var i=0;i<len;i++){
                 var lines = files[i].content.split('\n');
 
                 result[i] = {};
                 result[i]['__name'] = files[i].name;
-                result[i][keywords] = 0;
+                result[i]['key'] = {};
+                for(var k= 0,k_l = keywords.length;k<k_l;k++){
+                    result[i]['key'][keywords[k]] = 0;
+                }
 
                 for(var ln= 0,ln_len = lines.length;ln<ln_len;ln++){
+
                     prog('process file '+ files[i].name +' line '+ln);
                     var line = lines[ln];
-                    result[i][keywords] += line.split(keywords).length - 1;
+
+                    for(var k= 0,k_l = keywords.length;k<k_l;k++){
+                        result[i]['key'][keywords[k]] += line.split(keywords[k]).length - 1;
+                    }
                 }
             }
             comp(result);
